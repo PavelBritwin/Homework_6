@@ -1,15 +1,17 @@
-﻿// Task 41
+﻿// Task 43
+// y = k1 * x + b1
+// y = k2 * x + b2
+// x * k1 + b1 = x * k2 + b2
+// x = b2 - b1 / k1 - k2
 
-Console.WriteLine("Укажите количество чисел для ввода: ");
-int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Укажите коэффициенты для первого уравнения: ");
+double k1 = Convert.ToInt32(Console.ReadLine());
+double b1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Укажите коэффициенты для второго уравнения: ");
+double k2 = Convert.ToInt32(Console.ReadLine());
+double b2 = Convert.ToInt32(Console.ReadLine());
 
-int [] array = new int[m];
-int positiveCount = 0;
+double x = (b2 - b1) / (k1 - k2);
+double y = k1 * x + b1;
 
-for (int i = 0; i < array.Length; i++)
-{
-    Console.WriteLine($"Введите число № {i}: ");
-    array[i] = Convert.ToInt32(Console.ReadLine());
-    if (array[i] > 0) positiveCount++;
-}
-Console.WriteLine($"Количество введенных положительных чисел: {positiveCount}");
+Console.WriteLine($"Точка пересечения прямых: {x}; {y}");
